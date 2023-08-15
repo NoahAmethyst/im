@@ -27,7 +27,9 @@ func main() {
 	if len(port) == 0 {
 		port = "8080"
 	}
-	_ = app.Listen(fmt.Sprintf("0.0.0.0:%s", port), iris.WithConfiguration(iris.Configuration{
+	addr := fmt.Sprintf("0.0.0.0:%s", port)
+	log.Info().Msgf("server listening in :%s", addr)
+	_ = app.Listen(addr, iris.WithConfiguration(iris.Configuration{
 		DisableInterruptHandler: true,
 	}))
 }
