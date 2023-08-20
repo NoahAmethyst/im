@@ -18,6 +18,6 @@ FROM builder AS app
 
 WORKDIR /opt
 
-COPY --from=env /opt ./
+COPY --from=builder /opt ./
 
 ENTRYPOINT ["./im"]
