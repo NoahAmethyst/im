@@ -14,7 +14,7 @@ RUN go mod download
 
 RUN go build
 
-FROM alpine3.17 AS app
+FROM alpine:3.17 AS app
 
 WORKDIR /opt
 
