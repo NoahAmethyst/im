@@ -18,4 +18,4 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             im_pod=$(kubectl get pods -l app=im -o jsonpath='{.items[0].metadata.name}')
-            kubectl delete pod $im-pod
+            kubectl delete pod $im_pod
