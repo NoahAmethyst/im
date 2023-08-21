@@ -9,7 +9,6 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
-
     steps:
       - name: update kubernetes pod
         uses: appleboy/ssh-action@v1.0.0
@@ -17,6 +16,6 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
-          script:
+          script: |
             im-pod=kubectl get pods -l app=im
             kubectl delete pod $im-pod
